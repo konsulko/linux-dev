@@ -87,7 +87,7 @@ check_and_or_clone () {
 			echo "-----------------------------"
 			echo "scripts/git: LINUX_GIT not defined in system.sh"
 			echo "cloning ${torvalds_linux} into default location: ${DIR}/ignore/linux-src"
-			${git_bin} clone "${torvalds_linux}" "${DIR}/ignore/linux-src"
+			${git_bin} clone ${torvalds_linux_args} "${torvalds_linux}" "${DIR}/ignore/linux-src"
 		fi
 		LINUX_GIT="${DIR}/ignore/linux-src"
 	fi
@@ -292,8 +292,8 @@ if [ ! "${git_config_user_name}" ] ; then
 	${git_bin} config --local user.name "Your Name"
 fi
 
-torvalds_linux="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git"
-linux_stable="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git"
+torvalds_linux="git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git"
+linux_stable="git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git"
 
 if [ ! -f "${DIR}/.yakbuild" ] ; then
 	git_kernel
