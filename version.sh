@@ -2,7 +2,8 @@
 #
 ARCH=$(uname -m)
 
-config="multi_v7_defconfig"
+# config="multi_v7_defconfig"
+config="bb.org_defconfig"
 
 build_prefix="-armv7-devel-r"
 branch_prefix="v"
@@ -26,10 +27,13 @@ toolchain="gcc_linaro_gnueabihf_6"
 #toolchain="gcc_linaro_aarch64_gnu_6"
 
 #Kernel/Build
-KERNEL_REL=4.9
-KERNEL_TAG=${KERNEL_REL}-rc1
-BUILD=${build_prefix}31
+#KERNEL_REL=4.9
+#KERNEL_TAG=${KERNEL_REL}-rc1
+#BUILD=${build_prefix}31
 kernel_rt=".X-rtY"
+KERNEL_REL=3.8
+KERNEL_TAG=${KERNEL_REL}.13-etagen
+BUILD=-bone81
 
 #v4.X-rcX + upto SHA
 #prev_KERNEL_SHA="b67be92feb486f800d80d72c67fd87b47b79b18e"
